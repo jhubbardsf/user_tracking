@@ -2,7 +2,7 @@
 
 # Installation instructions.
 
-1. Using RVM, create new Gemset in app directory.
+1. Using RVM, create new Gemset for app.
 
 ```rvm use 2.0.0@user-tracking --create```
 
