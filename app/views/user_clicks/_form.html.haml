@@ -1,0 +1,15 @@
+= form_for @user_click, html: { class: "form form-horizontal user_click" } do |f|
+  .form-group
+    = f.label :user_id, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :user_id, class: 'form-control', required: true
+    = f.error_span(:user_id)
+  .form-group
+    = f.label :field, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :field, class: 'form-control', required: true
+    = f.error_span(:field)
+  .form-group
+    .col-lg-offset-2.col-lg-10
+      = f.submit nil,class: 'btn btn-primary'
+      = link_to t('.cancel', :default => t("helpers.links.cancel")), user_clicks_path, :class => 'btn btn-default'
