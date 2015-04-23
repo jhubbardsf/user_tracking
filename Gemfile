@@ -44,6 +44,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers', require: false
+  gem 'capybara-webkit'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

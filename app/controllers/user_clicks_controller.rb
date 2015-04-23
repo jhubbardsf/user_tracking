@@ -6,6 +6,7 @@ class UserClicksController < ApplicationController
   def index
     # In the index, get all user_clicks for user, including the user model so N+1 error doesn't occur.
     @user_clicks = UserClick.includes(:user).where(user_id: params[:user_id])
+    @user = User.find(params[:user_id])
   end
 
   # GET /user/:user_id/user_clicks/1
