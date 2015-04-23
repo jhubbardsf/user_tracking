@@ -22,9 +22,10 @@ $(function () {
     $(document).on('click', '.record-click', function () {
         // Get information embedeed in the form.
         var $form = $(this).closest('form'),
-            fieldName = $(this).siblings('label').text(),
+            fieldName = $(this).closest('.form-group').children('label').text(),
             id = $form.data('id'),
             recordUrl = $form.data("record-url");
+
 
         // Send post request to record click in database.
         $.post(recordUrl, {

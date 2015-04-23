@@ -11,11 +11,13 @@ en:
     actions: "Actions"
     links:
       back: "Back"
+      back_to_profile: "Back to Profile"
       cancel: "Cancel"
       confirm: "Are you sure?"
       destroy: "Delete"
       new: "New"
       edit: "Edit"
+      track: "User's Profile Tracking"
     titles:
       edit: "Edit %{model}"
       save: "Save %{model}"

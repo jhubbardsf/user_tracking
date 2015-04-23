@@ -2,8 +2,9 @@ Rails.application.routes.draw do
 
   # Nesting user_clicks with users.
   resources :users do
-    resources :user_clicks
+    resources :user_clicks, shallow: true
   end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
