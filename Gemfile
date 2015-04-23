@@ -38,6 +38,13 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  # Adding in rspec/capybara for testing. Database_cleaner to help keep the test DB clean. Factory_girl for factories. Should-matchers to help with basic tests.
+  gem 'rspec-rails', '~> 3.0'
+  gem 'capybara', '2.4.4'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers', require: false
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
