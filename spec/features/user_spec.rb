@@ -12,7 +12,7 @@ describe 'User' do
 
       click_on('User\'s Profile Tracking')
 
-      expect(page).to have_selector('.user-records-table')
+      expect(page).to have_content('No profile click history.')
       expect(page).to_not have_selector('.user-click-record')
 
       visit edit_user_path(@user)

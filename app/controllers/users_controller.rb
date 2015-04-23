@@ -5,6 +5,10 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+
+    if @users.count > 0
+      redirect_to edit_user_path(@users.first)
+    end
   end
 
   # GET /users/1

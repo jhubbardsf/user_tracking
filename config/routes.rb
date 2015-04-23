@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  root 'users#index'
 
-  # Nesting user_clicks with users.
+  # Nesting user_clicks within users, shallow true to keep from going too deep.
   resources :users do
     resources :user_clicks, shallow: true
   end

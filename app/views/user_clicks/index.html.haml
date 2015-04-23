@@ -1,19 +1,23 @@
 - model_class = UserClick
 .page-header
   %h1=t '.title', :default => t('helpers.links.track')
-%table.table.table-striped.user-records-table
-  %thead
-    %tr
-      %th= model_class.human_attribute_name(:user_id)
-      %th= model_class.human_attribute_name(:field)
-      %th= model_class.human_attribute_name(:created_at)
-      %th=t '.actions', :default => t('helpers.actions')
-  %tbody
-    - @user_clicks.each do |user_click|
-      %tr.user-click-record
-        %td= user_click.user.name
-        %td= user_click.field
-        %td=l user_click.created_at
-        %td= link_to t('.destroy', :default => t('helpers.links.destroy')), user_click_path(user_click), :method => :delete, :data => { :confirm => t('.confirm', :default => t('helpers.links.confirm', :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
+- if @user_clicks.empty?
+  %p
+    No profile click history.
+- else
+  %table.table.table-striped.user-records-table
+    %thead
+      %tr
+        %th= model_class.human_attribute_name(:user_id)
+        %th= model_class.human_attribute_name(:field)
+        %th= model_class.human_attribute_name(:created_at)
+        %th=t '.actions', :default => t('helpers.actions')
+    %tbody
+      - @user_clicks.each do |user_click|
+        %tr.user-click-record
+          %td= user_click.user.name
+          %td= user_click.field
+          %td=l user_click.created_at
+          %td= link_to t('.destroy', :default => t('helpers.links.destroy')), user_click_path(user_click), :method => :delete, :data => { :confirm => t('.confirm', :default => t('helpers.links.confirm', :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
 
 = link_to t('.track', :default => t("helpers.links.back_to_profile")), edit_user_path(@user), :class => 'btn btn-default col-lg-offset-3 col-lg-6'
