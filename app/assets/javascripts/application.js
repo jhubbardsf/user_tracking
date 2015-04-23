@@ -16,3 +16,22 @@
 //= require turbolinks
 //= require twitter/bootstrap
 //= require_tree .
+
+$(function () {
+    // Trigger event when elements with record-click are clicked.
+    $(document).on('click', '.record-click', function () {
+        // Get information embedeed in the form.
+        var $form = $(this).closest('form'),
+            fieldName = $(this).siblings('label').text(),
+            id = $form.data('id'),
+            recordUrl = $form.data("record-url");
+
+        // Send post request to record click in database.
+        $.post(recordUrl, {
+            user_click: {
+                user_id: id,
+                field: fieldName
+            }
+        });
+    })
+});
