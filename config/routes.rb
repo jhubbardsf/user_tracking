@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  # Nesting user_clicks with users.
   resources :users do
     resources :user_clicks
   end
